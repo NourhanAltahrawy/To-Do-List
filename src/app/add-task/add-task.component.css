@@ -1,0 +1,9 @@
+.form-group{
+  margin: 30px;
+}
+h3{margin: 30px;}
+.alert
+{
+  display: flex;
+  justify-content: space-between;
+}

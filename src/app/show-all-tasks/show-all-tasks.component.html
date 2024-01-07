@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="row">
+    <div class=" task col-md-6 text-center " *ngFor="let task of tasks; let i = index ">
+
+      <img src="{{ task.image.replace('public', 'https://task.ecmpp.com/storage/') }}"alt=""class="responsive-image">
+      <h2>{{task.title}}</h2>
+      <p>{{task.content}}</p>
+      <a routerLink="/update/{{task.id}}" class="active btn btn-secondary mx-5">Update</a>
+      <button type="button" class="btn btn-secondary" (click)="deleteTask(task.id)">Delete</button>
+    </div>
+
+
+
+</div>
+

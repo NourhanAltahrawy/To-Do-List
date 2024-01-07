@@ -1,0 +1,38 @@
+
+<div class="container bg-info-subtle">
+  <h3>Update Task</h3>
+  <div *ngIf="mesage" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Succes!</strong> Task updated succesfuly
+    <button (click)="removeMesage()" type="button" class="close btn btn-info" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form enctype="multipart/form-data" [formGroup]="updateTask" (ngSubmit)="editTask()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter task" formControlName="title">
+
+    </div>
+    <div class="form-group">
+      <label for="contentInput">Content</label>
+      <input type="text" class="form-control" id="contentInput" aria-describedby="emailHelp" placeholder="Enter content" formControlName="content">
+
+    </div>
+    <div class="form-group">
+      <label for="userNameInput">User Name</label>
+      <input type="text" class="form-control" id="userNameInput" aria-describedby="emailHelp" placeholder="Enter Name" formControlName="username">
+
+    </div>
+    <div class="form-group">
+      <label class="btn btn-info" for="inputImage">select image</label>
+      <input type="file" class="form-control " hidden id="inputImage" (change)="selectImg($event)" placeholder="select image" FormControl="updateTask.get('image')">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary "  >Update</button>
+  </div>
+  </form>
+  </div>
